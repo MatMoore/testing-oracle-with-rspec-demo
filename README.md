@@ -16,13 +16,19 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 git clone git@github.com:heidar/testing-oracle-with-rspec-demo.git
 ```
 
-2. Install gems
+2. Set the OCI_DIR
+
+```
+export OCI_DIR=$(brew --prefix)/lib
+```
+
+3. Install gems
 
 ```
 bundle
 ```
 
-3. Run tests
+4. Run tests
 
 ```
 bundle exec rspec
