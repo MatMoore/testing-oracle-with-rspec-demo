@@ -37,4 +37,4 @@ bundle exec rspec
 
 ### TODO
 
-Try with [ruby-plsql-spec](https://github.com/rsim/ruby-plsql-spec) gem instead.
+[Trello Board](https://trello.com/b/aFOPOLJR)
