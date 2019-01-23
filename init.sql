@@ -1,4 +1,17 @@
-CREATE OR REPLACE FUNCTION betwnstr (
+-- USER SQL
+CREATE USER "ruby" IDENTIFIED BY "ruby"  ;
+
+-- QUOTAS
+
+-- ROLES
+
+-- SYSTEM PRIVILEGES
+GRANT CREATE ANY PROCEDURE TO "ruby" ;
+GRANT CREATE ANY INDEX TO "ruby" ;
+GRANT CREATE ANY TABLE TO "ruby" ;
+GRANT "CONNECT" TO "ruby" ;
+
+CREATE OR REPLACE FUNCTION ruby.betwnstr (
    string_in   IN   VARCHAR2,
    start_in    IN   INTEGER,
    end_in      IN   INTEGER

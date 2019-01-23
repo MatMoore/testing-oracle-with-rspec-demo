@@ -5,7 +5,7 @@ require 'ruby-plsql'
 
 class Uppercase
   def initialize
-    plsql.connection = OCI8.new('system/oracle@//localhost:49161/XE')
+    plsql.connection = OCI8.new('ruby/ruby@//localhost:49161/XE')
   end
 
   def upper(text)
