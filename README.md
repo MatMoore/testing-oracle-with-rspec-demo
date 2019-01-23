@@ -1,7 +1,8 @@
 ### Run Oracle in Docker
 
 ```
-docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
+docker build -t testing-oracle-with-rspec-demo .
+docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true testing-oracle-with-rspec-demo
 ```
 
 ### Install Oracle Instant Client
