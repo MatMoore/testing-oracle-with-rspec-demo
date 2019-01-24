@@ -19,3 +19,4 @@ BEGIN
    END IF;
    RETURN (SUBSTR (string_in, l_start, end_in - l_start + 1));
 END;
+/

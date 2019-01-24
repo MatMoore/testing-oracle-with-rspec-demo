@@ -11,7 +11,7 @@ RSpec.describe 'Functions' do
 
   describe '#betwnstr' do
     it 'returns a substring based on the indexes provided' do
-      expect(plsql.betwnstr('Test', 1, 2)).to eq 'es'
+      expect(plsql.betwnstr('Test', 2, 3)).to eq 'es'
     end
   end
 end
