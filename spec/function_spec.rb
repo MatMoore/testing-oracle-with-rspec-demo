@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'oci8'
-require 'ruby-plsql'
 require 'spec_helper'
 
 RSpec.describe 'Functions' do
