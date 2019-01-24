@@ -4,8 +4,6 @@ require 'spec_helper'
 
 describe "Remove rooms by name" do
   before(:all) do
-    plsql.connection = OCI8.new('ruby/ruby@//localhost:49161/XE')
-
     plsql.rooms.insert_values(
       [:room_key, :name],
       [1, 'Dining Room'],
