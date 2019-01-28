@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe "Remove rooms by name" do
   before(:all) do
-    plsql.rooms.insert_values(
+    plsql.ruby.rooms.insert_values(
       [:room_key, :name],
       [1, 'Dining Room'],
       [2, 'Living Room'],
@@ -12,7 +12,7 @@ describe "Remove rooms by name" do
       [4, 'Bathroom'],
       [5, 'Bedroom']
     )
-    plsql.room_contents.insert_values(
+    plsql.ruby.room_contents.insert_values(
       [:contents_key, :room_key, :name],
       [1, 1, 'Table'],
       [2, 1, 'Hutch'],
@@ -27,24 +27,24 @@ describe "Remove rooms by name" do
   end
 
   it "should remove a room without furniture" do
-    rooms_without_b = plsql.rooms.all("WHERE name NOT LIKE 'B%'")
-    plsql.remove_rooms_by_name('B%')
-    expect(plsql.rooms.all).to eq rooms_without_b
+    rooms_without_b = plsql.ruby.rooms.all("WHERE name NOT LIKE 'B%'")
+    plsql.ruby.remove_rooms_by_name('B%')
+    expect(plsql.ruby.rooms.all).to eq rooms_without_b
   end
 
   it "should not remove a room with furniture" do
     expect {
       expect {
-        plsql.remove_rooms_by_name('Living Room')
+        plsql.ruby.remove_rooms_by_name('Living Room')
       }.to raise_error(/ORA-02292/)
-    }.not_to change { plsql.rooms.all }
+    }.not_to change { plsql.ruby.rooms.all }
   end
 
   it "should raise exception when NULL value passed" do
     expect {
       expect {
-        plsql.remove_rooms_by_name(NULL)
+        plsql.ruby.remove_rooms_by_name(NULL)
       }.to raise_error(/program error/)
-    }.not_to change { plsql.rooms.all }
+    }.not_to change { plsql.ruby.rooms.all }
   end
 end
